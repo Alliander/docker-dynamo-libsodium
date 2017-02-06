@@ -11,11 +11,12 @@ RUN \
 	yum -y update && yum clean all && \
 	yum -y install install curl && \
 	yum -y install make gcc gcc-c++
-	Download and install libsodium
-	https://download.libsodium.org/doc/
-	Download & extract & make libsodium
-	Move libsodium build
-	RUN \
+	
+#Download and install libsodium
+#https://download.libsodium.org/doc/
+#Download & extract & make libsodium
+#Move libsodium build
+RUN \
 	mkdir -p /tmpbuild/libsodium && \
 	cd /tmpbuild/libsodium && \
 	curl -L https://download.libsodium.org/libsodium/releases/libsodium-$LIBSODIUM_VERSION.tar.gz -o libsodium-$LIBSODIUM_VERSION.tar.gz && \
