@@ -4,7 +4,7 @@ Libsodium is een en-/decryptie library die in USEF gebruikt wordt om berichten d
 
 Het maken/update van de image doe je met:
 ```console
-$ docker build -t libsodium:0.1 .
+$ docker build -t usefdynamo/libsodium:0.1 .
 ```
 
 Om dit image beschikbaar te hebben in de k8s omgeving(en) moet het nog gepushed worden naar de usefdynamo repository:
