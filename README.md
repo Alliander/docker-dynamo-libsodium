@@ -1,15 +1,15 @@
-## Docker image voor standaard image met Libsodium
+## Docker image for standard image with Libsodium
 
-Libsodium is een en-/decryptie library die in USEF gebruikt wordt om berichten de coderen en decoderen.
+Libsodium is an encryption / decryption library that is used in USEF to encrypt and decrypt messages.
 
-Het maken/update van de image doe je met:
+Create / update the image can be done by:
 ```console
-$ docker build -t usefdynamo/libsodium:0.1 .
+$ docker build -t usefdynamo / libsodium: 0.2.
 ```
 
-Om dit image beschikbaar te hebben in de k8s omgeving(en) moet het nog gepushed worden naar de usefdynamo repository:
+To have this image available in the K8S environment it needs to be pushed to the usefdynamo repository:
 ```console
-$ docker push usefdynamo/libsodium:0.1
+$ docker push usefdynamo / libsodium: 0.2
 ```
 
-*Check het versie nummer voordat je bovenstaande commando's uitvoert! De bedoeling is dat deze repo automatisch gebouwd gaat worden middels Docker Hub of Quay.io. Op dit moment is het nog niet zover en moeten wijzigingen in deze repo's handmatig gepushed worden.*
+* Check the version number before you carry out these commands! The intention is that these repos will be automatically built by Docker Hub or Quay.io. At the moment it is still not ready and needs to be pushed manually to the repo. *
