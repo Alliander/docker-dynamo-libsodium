@@ -16,9 +16,23 @@ pipeline {
       }
     }
 
-    stage ('Docker Build & Deploy') {
+    stage ('Docker Build & Push') {
       steps {
-        dockerBuildAndPush(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium', "ci-${env.BUILD_TIMESTAMP}")
+        dockerBuildAndPush(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium')
+      }
+    }
+
+    stage ("Approval for creating a Docker tag") {
+      steps {
+        timeout(time:5, unit:'DAYS') {
+          input "Create a Docker release tag for this image? This will result in a new release tag in the Docker registry."
+        }
+      }
+    }
+
+    stage ('Docker Release') {
+      steps {
+        dockerRelease(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium', 0.2) //TODO: get latest version from registry and increase by 1 or from property file???
       }
     }
 
