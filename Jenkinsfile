@@ -18,7 +18,7 @@ pipeline {
 
     stage ('Docker Build & Push') {
       steps {
-        dockerBuildAndPush(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium')
+        dockerBuildAndPush(env.REGISTRY_SERVER, 'usefdynamo/libsodium')
       }
     }
 
@@ -32,7 +32,7 @@ pipeline {
 
     stage ('Docker Release') {
       steps {
-        dockerRelease(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium', 0.2) //TODO: get latest version from registry and increase by 1 or from property file???
+        dockerRelease(env.REGISTRY_SERVER, 'usefdynamo/libsodium', 0.2) //TODO: get latest version from registry and increase by 1 or from property file???
       }
     }
 
@@ -43,10 +43,3 @@ pipeline {
     }
   }
 }
-
-
-
-//def buildParameterMap = [:]
-//buildParameterMap['appName'] = 'dynamo-libsodium'
-
-//buildAndDeployGeneric(buildParameterMap)
