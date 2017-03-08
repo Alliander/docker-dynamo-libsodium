@@ -18,7 +18,7 @@ pipeline {
 
     stage ('Docker Build & Deploy') {
       steps {
-        dockerBuildAndDeploy(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium', "ci-${env.BUILD_TIMESTAMP}")
+        dockerBuildAndPush(env.REGISTRY_SERVER, 'usefdynamo/dynamo-libsodium', "ci-${env.BUILD_TIMESTAMP}")
       }
     }
 
