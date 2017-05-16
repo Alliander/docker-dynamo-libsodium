@@ -3,15 +3,18 @@ FROM jboss/base-jdk:8
 MAINTAINER David Righart
 
 ENV LIBSODIUM_VERSION 1.0.11
+ENV TZ=Europe/Amsterdam
 
 USER root
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 #Install some tools: gcc build tools, unzip, etc
 RUN \
 	yum -y update && yum clean all && \
 	yum -y install install curl && \
 	yum -y install make gcc gcc-c++
-	
+
 #Download and install libsodium
 #https://download.libsodium.org/doc/
 #Download & extract & make libsodium
