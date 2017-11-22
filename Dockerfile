@@ -22,7 +22,7 @@ RUN \
 RUN \
 	mkdir -p /tmpbuild/libsodium && \
 	cd /tmpbuild/libsodium && \
-	curl -L https://download.libsodium.org/libsodium/releases/libsodium-$LIBSODIUM_VERSION.tar.gz -o libsodium-$LIBSODIUM_VERSION.tar.gz && \
+	curl -L https://download.libsodium.org/libsodium/releases/old/libsodium-$LIBSODIUM_VERSION.tar.gz -o libsodium-$LIBSODIUM_VERSION.tar.gz && \
 	tar xfvz libsodium-$LIBSODIUM_VERSION.tar.gz && \
 	cd /tmpbuild/libsodium/libsodium-$LIBSODIUM_VERSION/ && \
 	./configure && \
