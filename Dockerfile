@@ -32,7 +32,5 @@ RUN \
 
         yum -y remove --skip-broken gcc make gcc-c++
 
-USER jboss
-
 #Define default command
 CMD ["bash"]
