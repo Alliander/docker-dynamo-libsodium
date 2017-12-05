@@ -5,7 +5,8 @@ pipeline {
   agent none
   environment {
     DOCKER_IMAGE = 'usefdynamo/libsodium'
-    DOCKER_IMAGE_RELEASE_TAG = '0.7' //TODO: get latest version from registry and increase by 1 or from property file???
+    // if you increase the version number, please update also the README.md
+    DOCKER_IMAGE_RELEASE_TAG = '0.8' //TODO: get latest version from registry and increase by 1 or from property file???
   }
   options {
     // Only keep the 10 most recent builds
