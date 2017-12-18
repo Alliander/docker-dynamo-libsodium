@@ -2,6 +2,6 @@
 @Library('dynamo-workflow-libs@master') _
 
 dockerOnlyPipeline {
-  dockerImageName = 'usefdynamo/libsodium'
+  dockerImageName = 'libsodium'
   gitRepoName = 'docker-dynamo-libsodium.git'
 }
