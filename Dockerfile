@@ -7,6 +7,8 @@ ENV TZ=Europe/Amsterdam
 
 USER root
 
+ADD VERSION .
+
 #Install some tools: gcc build tools, unzip, etc
 #Download and install libsodium
 #https://download.libsodium.org/doc/
