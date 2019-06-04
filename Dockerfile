@@ -2,7 +2,7 @@ FROM jboss/base-jdk:11
 
 MAINTAINER David Righart
 
-ENV LIBSODIUM_VERSION 1.0.11
+ENV LIBSODIUM_VERSION 1.0.17
 ENV TZ=Europe/Amsterdam
 
 USER root
