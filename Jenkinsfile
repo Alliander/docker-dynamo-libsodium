@@ -1,14 +1,7 @@
-@Library('jenkins-workflow-libs@v2-generic') _
-
-
-
+@Library('jenkins-workflow-libs@v2-generic') 
 def buildParameterMap = [:]
 buildParameterMap['appName'] = 'docker-dynamo-libsodium'
 buildParameterMap['buildStrategy'] = [
- 'forza': [ 'checkout', 'containerize'
-  ]
+  "forza": ["checkout", "containerize"]
 ]
-
 buildAndDeployGeneric(buildParameterMap)
-
-// vim: set ft=groovy:
