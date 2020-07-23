@@ -1,8 +1,10 @@
-@Library('jenkins-workflow-libs@v2-generic') 
+@Library('jenkins-workflow-libs@v2-generic')
 
-buildAndDeployGeneric(
-    appName: "docker-dynamo-libsodium",
-    buildStrategy: [
-        "master": ["checkout", "containerize"]
-    ]
-)
+
+def buildParameterMap = [:]
+buildParameterMap['appName'] = 'docker-dynamo-libsodium'
+buildParameterMap['buildStrategy'] = [
+  "forza": ['checkout', 'containerize']
+]
+
+buildAndDeployGeneric(buildParameterMap)
