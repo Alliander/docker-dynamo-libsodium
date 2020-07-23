@@ -1,7 +1,13 @@
-#!groovy
-@Library('dynamo-workflow-libs@master') _
+@Library('jenkins-workflow-libs@v2-generic') _
 
-dockerOnlyPipeline {
-  dockerImageName = 'libsodium'
-  gitRepoName = 'docker-dynamo-libsodium.git'
-}
+def buildParameterMap = [:]
+buildParameterMap['appName'] = 'docker-dynamo-libsodium'
+buildParameterMap['buildClosure'] = buildClosure
+buildParameterMap['buildStrategy'] = [
+ 'forza': [ 'checkout', 'containerize'
+  ]
+]
+
+buildAndDeployGeneric(buildParameterMap)
+
+// vim: set ft=groovy:
